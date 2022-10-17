@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #F8EDE3;
+    
+}
+header {
+    background-color: #7D6E83;
+    margin: auto;
+    padding: 16px 100px;
+    
+}
+header h1 {
+    margin:0;
+    color:#F8EDE3;
+    font-family: 'McLaren', cursive;  
+}
+footer{
+    position:absolute;
+    text-align: center;
+    width: 100%;
+    height: 2.5rem;
+}
+
+footer p {
+    color:#7D6E83;
+    
+}
+footer i {
+    margin: 5px;
+    padding: 5px;
+}
+
+.landingBackground{
+    background-image: url("images/kit2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}   
+.landingContent{
+    padding : 160px 100px;
+    color:#ffff;
+    line-height: 1.5;
+}
+.btn-landing {
+    margin-top:10px;
+    border-radius: 20px;
+    color: #ffffff;
+    background: transparent;
+    padding: 10px 20px 10px 20px;
+    font-weight: 400;
+    font-size: 1rem;
+    border: solid #F8EDE3 2px
+  }
+  
+.btn-landing:hover {
+    background: #7D6E83;
+    text-decoration: none;
+}
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: #ffffff;
+    margin: auto;
+    height: 200px;
+    box-shadow: 0 2px 5px #ccc;
+    text-align: center;
+
+}
+.img-shape {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin:0 auto;
+}
+.card-display{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;  
+    gap: 20px; 
+}
+.appH1{
+    text-align: center;
+    padding:20px;
+    margin: 20px;
+}
+.chef-img{
+    height: 200px;
+    width: 200px;
+}
+.feature-box{
+    text-align: center;
+    padding: 5%;
+}
+.mission-content{
+    padding : 50px 50px;
+    
+}
+.carousel-content{
+    background-color:#7D6E83 ;
+    padding: 7% 15%;
+    text-align: center;
+    margin-top: 30px;
+
+}
+.carousel-image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin:20px;
+  }
+.sponsor{
+    background-color:#7D6E83;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.sponsor-image{
+    width: 15%;
+    margin:20px 20px 50px;
+}
+
+@media (max-width:1028px) {
+    .landingContent{
+        text-align: center;
+    }
+    
+}
