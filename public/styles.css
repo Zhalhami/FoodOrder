@@ -7,18 +7,18 @@
 
 body{
     background-color: #F8EDE3;
-    
+
 }
 header {
     background-color: #7D6E83;
     margin: auto;
     padding: 16px 100px;
-    
+
 }
 header h1 {
     margin:0;
     color:#F8EDE3;
-    font-family: 'McLaren', cursive;  
+    font-family: 'McLaren', cursive;
 }
 footer{
     position:absolute;
@@ -29,7 +29,7 @@ footer{
 
 footer p {
     color:#7D6E83;
-    
+
 }
 footer i {
     margin: 5px;
@@ -41,7 +41,7 @@ footer i {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}   
+}
 .landingContent{
     padding : 160px 100px;
     color:#ffff;
@@ -57,7 +57,7 @@ footer i {
     font-size: 1rem;
     border: solid #F8EDE3 2px
   }
-  
+
 .btn-landing:hover {
     background: #7D6E83;
     text-decoration: none;
@@ -86,8 +86,8 @@ footer i {
     flex-wrap: wrap;
     flex-direction: row;
     margin: 10px;
-    padding: 10px;  
-    gap: 20px; 
+    padding: 10px;
+    gap: 20px;
 }
 .appH1{
     text-align: center;
@@ -104,7 +104,7 @@ footer i {
 }
 .mission-content{
     padding : 50px 50px;
-    
+
 }
 .carousel-content{
     background-color:#7D6E83 ;
@@ -134,5 +134,5 @@ footer i {
     .landingContent{
         text-align: center;
     }
-    
+
 }
