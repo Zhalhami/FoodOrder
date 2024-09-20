@@ -84,7 +84,7 @@ function Traning(){
             <hr></hr>
             <div>
                 <h2>Contact Us</h2>
-                <p>If you have any questions or need more information, feel free to contact our support team at <a style={{textDecoration:'none'}} href="#"> @trainingfoodordersupport.com</a> or contact via our contact page</p>
+                <p>If you have any questions or need more information, feel free to contact our support team at <a style={{textDecoration:'none'}} href="/contact"> @trainingfoodordersupport.com</a> or contact via our contact page</p>
             </div>
             
         </div>
