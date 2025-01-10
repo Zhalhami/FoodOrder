@@ -5,12 +5,12 @@
         "use": "@vercel/static-build"
       },
       {
-        "src": "Server/index.js",
+        "src": "Server/api/index.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "Server/index.js" },
+      { "src": "/api/(.*)", "dest": "Server/api/index.js" },
       { "src": "/(.*)", "dest": "client/build/$1" }
     ]
   }

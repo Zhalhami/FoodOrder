@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import router from './api/routes/SpecialOffers.js';
 import MainMenu from './api/routes/RestaurantMenu.js';
 import AuthRoute from "./api/routes/authRoutes.js"
-import menuRoute from './routes/menuRoute.js';
 import AdminRoute from './api/routes/adminRoutes.js'
 import axios from "axios"
 
