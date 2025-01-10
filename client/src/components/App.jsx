@@ -7,33 +7,21 @@ import Traning from "./Traning";
 import ContactMain from "./ContactMain";
 import About from "./About";
 import MenuPlan from "./MenuPlan";
-import Login from "./Login";
-import Signup from "./Signup";
+import AuthForm from "./AuthForm";
 import Cart from "./Cart";
 import Admin from "./Admin";
+import PrivateRoute from "../PrivateRoutes";
 
 function App() {
-  const [showCart, setShowCart] = useState(false); // State for showing the cart
-
-  // Get cart state and functions from CartContext
+  const [showCart, setShowCart] = useState(false);
   const { cart, addToCart, removeFromCart, isCartVisible, toggleCartVisibility, clearCart } = useContext(CartContext);
-
-  // Handle opening and closing of the cart
   const handleOpenCart = () => setShowCart(true);
-
-  // Handle increasing item quantity
   const handleIncrease = (item) => addToCart(item, 1);
 
 
   return (
     <Router>
       <div>
-        {/* Cart button in the header */}
-        {/* <button onClick={handleOpenCart}>
-          Open Cart ({cart.reduce((total, item) => total + item.quantity, 0)})
-        </button> */}
-
-        {/* Cart component */}
         {isCartVisible && (
           <Cart
           cartItems={cart}
@@ -43,11 +31,7 @@ function App() {
           removeFromCart ={removeFromCart}
           clearCart={clearCart}
         />
-
         )}
-        
-
-        {/* Define the routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -55,9 +39,8 @@ function App() {
           <Route path="/training" element={<Traning />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactMain />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/auth" element={<AuthForm/>} />
+          <Route path="/admin" element={<PrivateRoute> <Admin /> </PrivateRoute>}/>
         </Routes>
       </div>
     </Router>
@@ -66,7 +49,7 @@ function App() {
 
 function AppWrapper() {
   return (
-    <CartProvider> {/* Move CartProvider to wrap App */}
+    <CartProvider>
       <App />
     </CartProvider>
   );

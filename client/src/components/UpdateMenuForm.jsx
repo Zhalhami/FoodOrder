@@ -12,11 +12,11 @@ const UpdateMenuForm = ({ menu, onClose, onUpdate }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/api/special-offers/${menu._id}`, formData);
+      const response = await axios.put(`http://localhost:5000/api/main-menu/${menu._id}`, formData);
       onUpdate(response.data); // Notify parent component about the update
       onClose(); // Close the form/modal
     } catch (error) {

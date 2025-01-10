@@ -4,8 +4,8 @@ import { CartContext } from "./CreateContext";
 
 function Card() {
   const { cart, addToCart } = useContext(CartContext);
-  const [specialOffers, setSpecialOffers] = useState([]); // State to hold fetched data
-  const [loading, setLoading] = useState(true); // State to handle loading
+  const [specialOffers, setSpecialOffers] = useState([]); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     // Fetch data from the backend
@@ -26,19 +26,6 @@ function Card() {
     addToCart(food, 1);
   };
 
-  const handleIncrease = (food) => {
-    addToCart(food, 1);
-  };
-
-  const handleDecrease = (food) => {
-    const itemInCart = cart.find((item) => item.name === food.name);
-    if (itemInCart.quantity > 1) {
-      addToCart(food, -1);
-    } else {
-      addToCart(food, -itemInCart.quantity);
-    }
-  };
-
   if (loading) {
     return <div>Loading special offers...</div>;
   }
@@ -54,29 +41,9 @@ function Card() {
               <img className="img-shape" src={food.imgUrl} alt={food.name} />
               <h2 style={{ marginTop: "10px" }}>{food.name}</h2>
               <p style={{ opacity: "0.5" }}>
-                <s>₦{food.bamount} per plate</s>
+                <s>₦{food.pricebefore} per plate</s>
               </p>
-              <p>₦{food.amount} per Plate</p>
-              {itemInCart ? (
-                <div
-                  style={{ textAlign: "center" }}
-                  className="quantity-controls"
-                >
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => handleDecrease(food)}
-                  >
-                    -
-                  </button>
-                  <span>{itemInCart.quantity}</span>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => handleIncrease(food)}
-                  >
-                    +
-                  </button>
-                </div>
-              ) : (
+              <p>₦{food.price} per Plate</p>
                 <div className="btn-boxm">
                   <button
                     className="btn-box"
@@ -85,7 +52,7 @@ function Card() {
                     <i className="fa-solid fa-fire"></i> Add to cart
                   </button>
                 </div>
-              )}
+
             </div>
           );
         })}

@@ -6,8 +6,8 @@ function Cart({ cartItems, showCart, handleClose, handleIncrease, removeFromCart
   // Calculate the total price of items in the cart
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => {
-      const price = item.amount || item.price; // Use `amount` if it exists; fallback to `price`
-      return total + price * item.quantity; // Multiply the resolved price by quantity
+      const price = item.price; 
+      return total + price * item.quantity; 
     }, 0);
   };
 
@@ -42,7 +42,7 @@ function Cart({ cartItems, showCart, handleClose, handleIncrease, removeFromCart
                     className="list-group-item d-flex justify-content-between align-items-center"
                   >
                     <div>
-                      {item.name} - ₦{item.amount || item.price} per plate
+                      {item.name} - ₦{item.price} per plate
                     </div>
                     <div className="quantity-controls d-flex align-items-center">
                       <button

@@ -3,9 +3,8 @@ import mongoose from "mongoose";
 const specialOffersSchema = new mongoose.Schema({
   imgUrl: { type: String, required: true },
   name: { type: String, required: true },
-  amount: { type: Number, required: true },
-  bamount: { type: Number, required: true },
-  id: { type: String, unique: true, default: () => new mongoose.Types.ObjectId().toString() }, // Unique `id`
+  price: { type: Number, required: true },
+  pricebefore: { type: Number, required: true },
 });
 
 const SpecialOffers = mongoose.model("SpecialOffers", specialOffersSchema);

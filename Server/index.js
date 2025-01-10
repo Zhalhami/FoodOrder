@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import router from './routes/SpecialOffers.js';
 import MainMenu from './routes/RestaurantMenu.js';
 import AuthRoute from "./routes/authRoutes.js"
+import menuRoute from './routes/menuRoute.js';
+import AdminRoute from './routes/adminRoutes.js'
 import axios from "axios"
 
 axios.defaults.baseURL = 'http://localhost:5000';
@@ -26,6 +28,8 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use('/api', router);
 app.use('/api', MainMenu)
 app.use('/api', AuthRoute)
+app.use('/api', AdminRoute)
+// app.use('/api', menuRoute)
 
 const PORT = process.env.PORT || 5000;
 

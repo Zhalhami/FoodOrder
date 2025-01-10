@@ -4,7 +4,6 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
-    // Load cart from localStorage on initialization
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
@@ -16,30 +15,39 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (food, quantityChange) => {
-    if (!food) return; // Ensure food is valid
-    
+    if (!food) return;
+  
     setCart((prevCart) => {
+      // Find the existing item by name
       const existingItem = prevCart.find((item) => item.name === food.name);
+  
       if (existingItem) {
         const updatedQuantity = existingItem.quantity + quantityChange;
+  
+        // Remove item if quantity is reduced to zero or below
         if (updatedQuantity <= 0) {
-          // Remove item if quantity becomes 0 or less
           return prevCart.filter((item) => item.name !== food.name);
         }
-        // Update item quantity
+  
+        // Update quantity for the existing item
         return prevCart.map((item) =>
           item.name === food.name
             ? { ...item, quantity: updatedQuantity }
             : item
         );
       }
+  
       // Add new item to the cart if quantityChange > 0
       if (quantityChange > 0) {
         return [...prevCart, { ...food, quantity: quantityChange }];
       }
-      return prevCart; // If quantityChange <= 0 for non-existing item, do nothing
+  
+      // Do nothing if quantityChange <= 0 for non-existing item
+      return prevCart;
     });
   };
+  
+  
 
   const removeFromCart = (food, quantity = 1) => {
     addToCart(food, -quantity);

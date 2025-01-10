@@ -4,8 +4,8 @@ import axios from 'axios';
 const UpdateOfferForm = ({ offer, onClose, onUpdate }) => {
   const [formData, setFormData] = useState({
     name: offer.name,
-    amount: offer.amount,
-    bamount: offer.bamount,
+    price: offer.price,
+    pricebefore: offer.pricebefore,
     imgUrl: offer.imgUrl,
   });
 
@@ -36,15 +36,15 @@ const UpdateOfferForm = ({ offer, onClose, onUpdate }) => {
       />
       <input
         type="number"
-        name="amount"
-        value={formData.amount}
+        name="price"
+        value={formData.price}
         onChange={handleChange}
         placeholder="Amount"
       />
       <input
         type="number"
-        name="bamount"
-        value={formData.bamount}
+        name="pricebefore"
+        value={formData.pricebefore}
         onChange={handleChange}
         placeholder="Amount Before"
       />

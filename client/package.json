@@ -11,8 +11,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.12.1",
     "axios": "^1.7.9",
     "emailjs-com": "^3.2.0",
     "react": "^19.0.0",
@@ -31,5 +31,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": ""
 }
