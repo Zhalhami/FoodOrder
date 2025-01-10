@@ -28,7 +28,6 @@ app.use('/api', router);
 app.use('/api', MainMenu)
 app.use('/api', AuthRoute)
 app.use('/api', AdminRoute)
-// app.use('/api', menuRoute)
 
 app.get('/', (req, res) =>{
   res.send('Hello World');
